@@ -1,17 +1,52 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.*;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        task1();
+        task2();
+        task3();
+        task4();
+    }
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
-
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+    private static void task1() {
+        System.out.println("Задача 1");
+        List<Integer> nums = new ArrayList<>(List.of(1, 1, 2, 3, 4, 4, 5, 5, 6, 7));
+        for (Integer num : nums) {
+            if (num % 2 == 1) {
+                System.out.println(num);
+            }
         }
+    }
+    private static void task2() {
+        System.out.println("Задача 2");
+        List<Integer> nums = new ArrayList<>(List.of(10,1,3,4,5,6,9,8));
+        Set<Integer> set = new TreeSet<>();
+        for (Integer num : nums) {
+            if (num % 2 == 0) {
+                set.add(num);
+            }
+        }
+        System.out.println(set);
+    }
+
+    private static void task3() {
+        System.out.println("Задача 3");
+        List<String> str = new ArrayList<>(List.of("qqq", "qqq", "eee", "eee","www"));
+        Set<String> set = new HashSet<>(str);
+        System.out.println(set);
+
+    }
+    private static void task4() {
+        System.out.println("Задача 4");
+        List<String> strings = new ArrayList<>(List.of("один", "два", "два", "три", "три", "три"));
+        Map<String, Integer> map = new HashMap<>();
+        for (String string : strings) {
+            if (!map.containsKey(string)) {
+                map.put(string, 1);
+            } else {
+                map.put(string, map.get(string) + 1);
+            }
+        }
+        System.out.println(map.values());
     }
 }
